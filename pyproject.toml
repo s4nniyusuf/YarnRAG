@@ -4,4 +4,9 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "beautifulsoup4>=4.15.0",
+    "fake-useragent>=2.2.0",
+    "pandas>=3.0.5",
+    "requests>=2.34.2",
+]
