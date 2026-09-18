@@ -27,6 +27,8 @@ Rather than presenting a topic as settled fact, YarnRAG is designed to explain t
 | Vector database | Chroma |
 | Answer-generation model | Hugging Face Inference Endpoint with Qwen 2.5 72B Instruct |
 
+---
+
 ## What it does
 
 1. Finds discussion-thread links from selected Nairaland categories.
@@ -35,6 +37,8 @@ Rather than presenting a topic as settled fact, YarnRAG is designed to explain t
 4. Builds a balanced cleaned subset across six categories.
 5. Chunks and embeds discussions into a persistent Chroma vector store.
 6. Retrieves relevant discussions for a question and asks an LLM to produce a grounded, conversational answer.
+
+---
 
 ## Data coverage
 
@@ -48,6 +52,8 @@ The checked-in cleaned dataset contains 600 discussion threads: 100 each from:
 - Tech
 
 All data is sourced from public Nairaland pages. Discussion content may contain opinions, inaccurate claims, offensive language, or personal information posted by forum users. It should not be treated as verified news or professional advice.
+
+---
 
 ## Project structure
 
@@ -69,6 +75,8 @@ YarnRAG/
 └── README.md
 ```
 
+---
+
 ## Requirements
 
 - Python 3.12 or later
@@ -87,6 +95,8 @@ Or, with pip:
 ```bash
 pip install beautifulsoup4 fake-useragent pandas requests
 ```
+
+---
 
 ## Collecting data
 
@@ -120,6 +130,8 @@ data/raw_data/thread_data.jsonl
 
 Because output is appended, back up or remove/rename the existing JSONL file before a fresh full scrape if duplicate records are not wanted.
 
+---
+
 ## Cleaning the data
 
 Open `notebooks/threads_cleaning.ipynb` in Google Colab. The notebook currently:
@@ -132,6 +144,8 @@ Open `notebooks/threads_cleaning.ipynb` in Google Colab. The notebook currently:
 - selects up to 100 threads from each configured category.
 
 Update the notebook's Google Drive input and output paths before running it. Its output is `cleaned_threads.json`.
+
+---
 
 ## Building and querying the RAG system
 
@@ -149,6 +163,8 @@ The notebook:
 
 The notebook installs its own RAG dependencies in Colab. Set the `HF_API_TOKEN_2` secret in Colab before running the LLM cells, and change the Drive paths if needed.
 
+---
+
 ## Grounded-answering principles
 
 YarnRAG:
@@ -158,6 +174,8 @@ YarnRAG:
 - represent meaningful disagreement rather than inventing consensus;
 - say when the retrieved evidence is insufficient; and
 - retain source titles and links when referencing a specific discussion.
+
+---
 
 ## License
 
