@@ -151,27 +151,13 @@ The notebook installs its own RAG dependencies in Colab. Set the `HF_API_TOKEN_2
 
 ## Grounded-answering principles
 
-YarnRAG should:
+YarnRAG:
 
 - answer only from retrieved discussions;
 - distinguish commenters' opinions from established facts;
 - represent meaningful disagreement rather than inventing consensus;
 - say when the retrieved evidence is insufficient; and
 - retain source titles and links when referencing a specific discussion.
-
-The final item requires links to be included in the cleaned data and LangChain document metadata. This is a recommended next improvement to the current notebook pipeline.
-
-## Limitations and next steps
-
-This is not yet a production application. Important next steps include:
-
-- add a local CLI, API, or web interface;
-- make the notebook workflow reproducible outside Colab;
-- add thread links to cleaned-document metadata and render citations in answers;
-- deduplicate and validate JSONL records before re-scraping;
-- add automated tests for extraction and cleaning;
-- measure retrieval and answer quality with a representative evaluation set; and
-- define data retention, moderation, and safety practices for user-generated content.
 
 ## License
 
