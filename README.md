@@ -22,7 +22,7 @@ Rather than presenting a topic as settled fact, YarnRAG is designed to explain t
 | Language and environment | Python 3.12, uv, Google Colab |
 | Data collection | Requests, Beautiful Soup, pandas |
 | Data preparation | Python standard libraries, pandas, Jupyter notebooks |
-| RAG orchestration | LangChain, LangChain Text Splitters, Langchain Community, Langchain Huggingface, Langchain Chroma |
+| RAG orchestration | LangChain |
 | Embeddings | `BAAI/bge-small-en-v1.5` via Hugging Face |
 | Vector database | Chroma |
 | Answer-generation model | Hugging Face Inference Endpoint with Qwen 2.5 72B Instruct |
