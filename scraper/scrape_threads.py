@@ -8,10 +8,17 @@ from pathlib import Path
 import requests
 import pandas as pd
 from bs4 import BeautifulSoup
-from fake_useragent import UserAgent
 
-ua = UserAgent()
-headers = {"User-Agent ": ua.random}
+headers = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/131.0.0.0 Safari/537.36"
+    ),
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
+    "DNT": "1",
+}
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = PROJECT_ROOT / "data" / "raw_data"
@@ -55,7 +62,8 @@ def get_thread_data(soup: BeautifulSoup | None) -> tuple[str, list[dict[str, str
         return None
 
     # Thread post content extraction
-    content = thread_table.find("tbody").find_all("tr")[0].find("td").find("div", {"class": "narrow"}).text.strip()
+    content = thread_table.find("tbody").find_all("tr")[1].find("td").find("div", {"class": "narrow"}).text.strip()
+    print(content)
 
     # Thread comments extraction
     x = 0
@@ -70,10 +78,7 @@ def get_thread_data(soup: BeautifulSoup | None) -> tuple[str, list[dict[str, str
             x+=1
             comment= tr[1].find("td").find("div", {"class": "narrow"}).text.strip()
             
-            comments.append({
-                "comment_number": x,
-                "comment": comment,
-            })
+            comments.append(comment)
 
     return content, comments
 
