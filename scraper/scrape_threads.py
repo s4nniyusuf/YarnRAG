@@ -8,6 +8,11 @@ from pathlib import Path
 import requests
 import pandas as pd
 from bs4 import BeautifulSoup
+from fake_useragent import UserAgent
+
+
+# ua = UserAgent()
+# headers = {"User-Agent": ua.random}
 
 headers = {
     "User-Agent": (
