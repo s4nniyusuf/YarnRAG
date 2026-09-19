@@ -176,9 +176,13 @@ YarnRAG represents retrieved discussions, not forum opinion as fact. Its answers
 
 ---
 
-## Support the project
+## Feedback
 
-If YarnRAG interests you, consider giving the repository a star. It helps others discover it.
+Open an issue, submit a PR, or reach out on X [@s4nni_yusuf](https://x.com/s4nni_yusuf).
+
+If you YarnRAG interests you, consider giving it a star. It helps more people find the project.
+
+Demo Video on [Youtube](https://youtu.be/bFSWwB3aZ2k?feature=shared)
 
 ---
 
