@@ -178,7 +178,7 @@ YarnRAG represents retrieved discussions, not forum opinion as fact. Its answers
 
 ## Support the project
 
-If YarnRAG interests you, consider giving the repository a star, it helps others discover it.
+If YarnRAG interests you, consider giving the repository a star. It helps others discover it.
 
 ---
 
