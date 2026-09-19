@@ -176,6 +176,12 @@ YarnRAG represents retrieved discussions, not forum opinion as fact. Its answers
 
 ---
 
+## Support the project
+
+If YarnRAG interests you, please consider giving the repository a star, it helps others discover it.
+
+---
+
 ## License
 
 This project is released under the [MIT License](LICENSE).
