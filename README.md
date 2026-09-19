@@ -1,8 +1,8 @@
 # YarnRAG
 
-YarnRAG is an experimental conversational RAG prototype for exploring Nigerian public discourse. It transforms retrieved Nairaland conversations into grounded, context-aware answers that reflect the viewpoints, debates, humour, and lived experiences expressed in the discussions.
+YarnRAG is an experimental conversational RAG project for exploring Nigerian public discourse.
 
-Built with retrieval-augmented generation (RAG), YarnRAG retrieves relevant discussions instead of relying on generic model knowledge. It is designed to show what people actually said, where opinions diverged, and where the retrieved conversations do not provide enough information.
+It transforms retrieved Nairaland conversations into grounded, context-aware answers that reflect the viewpoints, debates, humour, and lived experiences expressed in those discussions.
 
 [![Python 3.12+](https://img.shields.io/badge/python-3.12%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?logo=langchain&logoColor=white)](https://www.langchain.com/)
