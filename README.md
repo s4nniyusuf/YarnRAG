@@ -1,8 +1,8 @@
 # YarnRAG
 
-YarnRAG is a retrieval-augmented generation (RAG) prototype for exploring Nigerian online conversations. It collects public Nairaland discussions, cleans and structures them, indexes them in a vector database, and uses an LLM to answer questions from the retrieved conversations.
+YarnRAG is an experimental conversational RAG prototype for exploring Nigerian public discourse. It transforms retrieved Nairaland conversations into grounded, context-aware answers that reflect the viewpoints, debates, humour, and lived experiences expressed in the discussions.
 
-Rather than presenting a topic as settled fact, YarnRAG is designed to explain the range of views, arguments, humour, concerns, and experiences expressed in the source discussions.
+Built with retrieval-augmented generation (RAG), YarnRAG retrieves relevant discussions instead of relying on generic model knowledge. It is designed to show what people actually said, where opinions diverged, and where the retrieved conversations do not provide enough information.
 
 [![Python 3.12+](https://img.shields.io/badge/python-3.12%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?logo=langchain&logoColor=white)](https://www.langchain.com/)
@@ -11,7 +11,7 @@ Rather than presenting a topic as settled fact, YarnRAG is designed to explain t
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 
-> **Current status:** research/prototype. The scraping scripts can run locally; the cleaning and RAG workflows currently live in Google Colab notebooks.
+> **Current status:** experimental RAG project. The scraping scripts can run locally; the cleaning and RAG workflows currently live in Google Colab notebooks.
 
 ---
 
@@ -25,7 +25,7 @@ Rather than presenting a topic as settled fact, YarnRAG is designed to explain t
 | RAG orchestration | LangChain |
 | Embeddings | `BAAI/bge-small-en-v1.5` via Hugging Face |
 | Vector database | Chroma |
-| Answer-generation model | Hugging Face Inference Endpoint with Qwen 2.5 72B Instruct |
+| Answer-generation model | Hugging Face Inference Endpoint with Qwen/Qwen3-4B-Instruct-2507 |
 
 ---
 
@@ -161,19 +161,18 @@ The notebook:
 6. Uses multi-query retrieval to find relevant discussion chunks.
 7. Sends the retrieved context to a Hugging Face-hosted Qwen model for an answer.
 
-The notebook installs its own RAG dependencies in Colab. Set the `HF_API_TOKEN_2` secret in Colab before running the LLM cells, and change the Drive paths if needed.
+The notebook installs its own RAG dependencies in Colab. Set the `HF_INFERENCE_TOKEN` secret in Colab before running the LLM cells, and change the Drive paths if needed.
 
 ---
 
 ## Grounded-answering principles
 
-YarnRAG:
+YarnRAG represents retrieved discussions, not forum opinion as fact. Its answers:
 
-- answer only from retrieved discussions;
-- distinguish commenters' opinions from established facts;
-- represent meaningful disagreement rather than inventing consensus;
-- say when the retrieved evidence is insufficient; and
-- retain source titles and links when referencing a specific discussion.
+- rely only on retrieved evidence and attribute viewpoints carefully;
+- reflect relevant conversational context and disagreement;
+- answer the question directly, using quotes sparingly; and
+- respond with `I don't know.` when evidence is insufficient.
 
 ---
 
