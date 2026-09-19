@@ -22,7 +22,7 @@ Built with retrieval-augmented generation (RAG), YarnRAG retrieves relevant disc
 | Language and environment | Python 3.12, uv, Google Colab |
 | Data collection | Requests, Beautiful Soup, pandas |
 | Data preparation | Python standard libraries, pandas, Jupyter notebooks |
-| RAG orchestration | LangChain |
+| RAG orchestration | LangChain with multi-query expansion for query transformation |
 | Embeddings | `BAAI/bge-small-en-v1.5` via Hugging Face |
 | Vector database | Chroma |
 | Answer-generation model | Hugging Face Inference Endpoint with Qwen/Qwen3-4B-Instruct-2507 |
